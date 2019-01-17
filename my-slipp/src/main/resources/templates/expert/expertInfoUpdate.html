@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+{{> include/header}}
+<style>
+.form-signin {
+	width: 100%;
+	max-width: 420px;
+	padding: 15px;
+	margin: auto;
+}
+
+.form-label-group {
+	position: relative;
+	margin-bottom: 1rem;
+}
+
+.container {
+	margin-top: 30px;
+	padding-top: 30px;
+}
+
+body {
+	background-color: #f5f5f5;
+}
+
+#naverMap {
+	border: 1px solid #000;
+	width: 90%;
+	height: 350px;
+	margin: 5%
+}
+
+.xyform {
+	margin-left: 38px;
+}
+
+#xy {
+	width: 35%;
+}
+</style>
+<script type="text/javascript"
+	src="https://openapi.map.naver.com/openapi/v3/maps.js?clientId=EyS1oN3ctKp11P_s__ni"></script>
+</style>
+</head>
+<body>
+	{{> include/navigation}} {{#expert}}
+	<form class="form-signin" action="/experts/{{expertNum}}/infoUpdate" method="post">
+		<div class="text-center container mb-4">
+			<img class="mb-4" src="" alt="" width="72" height="72">
+			<p><img width="55" height="55" alt="" src="/img/expert2.png"></p>
+			<h1 class="h3 mb-3 font-weight-normal">Information Update</h1>
+			<p>
+				Build form controls with floating labels via the
+				<code>:placeholder-shown</code>
+				pseudo-element. <a href="">Works in latest Chrome, Safari, and
+					Firefox.</a>
+			</p>
+		</div>
+
+		<div class="form-label-group">
+			<label for="introduction">자기소개</label>
+			<textarea class="form-control" rows="5" id="introduction" name="introduction" value="{{introduction}}"></textarea>
+		</div>
+
+		<div class="form-label-group">
+			<label for="profile">프로필 이미지</label>
+			<img class="card-img-top" src="{{profile}}" alt="이미지가 없어요">
+			<textarea class="form-control" rows="3" id="profile" name="profile" value="{{profile}}"></textarea>
+		</div>
+		
+		<div class="form-label-group">
+			<label for="expertEmail">Email</label> <input type="text"
+				class="form-control" id="expertEmail" name="expertEmail" placeholder="Email"
+				value="{{expertEmail}}" required>
+		</div>
+		<hr class="mb-4">
+		<div id="naverMap"></div>
+		<div class="row xyform xy1" style="margin-top: 10px;">
+			<div class="row xyform">
+				<input type="text" class="form-control" id="xy" name="posX"
+					value="{{posX}}"> <input type="text" class="form-control"
+					id="xy" name="posY" value="{{posY}}">
+			</div>
+		</div>
+		<hr class="mb-4">
+		<button class="btn btn-lg btn-secondary btn-block" type="submit">정보수정</button>
+		<p class="mt-5 mb-3 text-muted text-center">&copy; 2018</p>
+	</form>
+	<script>
+			var map = new naver.maps.Map('naverMap', {
+				center : new naver.maps.LatLng({{posX}},{{posY}}),
+				zoom : 11,
+				zoomControl : true,
+				zoomControlOptions : {
+					position : naver.maps.Position.TOP_RIGHT
+				},
+				mapTypeControl : true,
+			});
+			function setMarker(posX, posY) {
+				var marker = new naver.maps.Marker({
+					position : new naver.maps.LatLng(posX, posY),
+					map : map
+				});
+				markerArray.push(marker);
+			}
+			var markerArray = [];
+			function deleteMarkers() {
+				for (key in markerArray) {
+					markerArray[key].setMap(null);
+				}
+				markerArray = [];
+			}
+			naver.maps.Event.addListener(map, 'click', function(e) {
+				$('[name=posX]').val(e.coord.lat());
+				$('[name=posY]').val(e.coord.lng());
+				deleteMarkers();
+				setMarker(e.coord.lat(), e.coord.lng());
+			});
+			setMarker({{posX}},{{posY}});
+		</script>
+	{{/expert}} {{> include/footer}}
+</body>
+</html>

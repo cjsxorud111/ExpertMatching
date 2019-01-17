@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+{{> include/header}}
+<link rel="stylesheet" type="text/css" href="/css/checkbox.css">
+<style>
+.form-signin {
+	width: 100%;
+	max-width: 420px;
+	padding: 15px;
+	margin: auto;
+}
+
+.form-label-group {
+	position: relative;
+	margin-bottom: 1rem;
+}
+
+.container {
+	margin-top: 30px;
+	padding-top: 30px;
+}
+
+.btn-original {
+	margin-top: 10px;
+	width: 100%;
+}
+
+body {
+	background-color: #f5f5f5;
+}
+</style>
+</head>
+<body>
+	{{> include/navigation}}{{#user}}
+	<form class="form-signin" action="/search/{{userNum}}/matchingList2" method="get">
+		<div class="text-center container mb-4">
+			<img class="mb-4" src="" alt="" width="72" height="72">
+			<p><img width="55" height="55" alt="" src="/img/user.png"></p>
+			<h1 class="h3 mb-3 font-weight-normal">관심사항 설정하기</h1>
+			<p>
+				Build form controls with floating labels via the
+				<code>:placeholder-shown</code>
+				pseudo-element. <a href="">Works in latest Chrome, Safari, and
+					Firefox.</a>
+			</p>
+		</div>
+		<div class="col-md-12">
+			<fieldset>
+				<legend> 관심있는 동물 </legend>
+				<div class="custom-control custom-checkbox">
+					<input id="check1" name="interestField01" type="checkbox"
+						class="custom-control-input" value="포유류" checked="checked">
+					<label class="custom-control-label" for="check1"><img
+						width="22" height="22" alt="" src="/img/mammal.png"> 포유류
+						(mammal)</label>
+				</div>
+				<div class="custom-control custom-checkbox">
+					<input id="check2" name="interestField01" type="checkbox"
+						class="custom-control-input" value="파충류"> <label
+						class="custom-control-label" for="check2"><img width="22"
+						height="22" alt="" src="/img/reptile.png"> 파충류 (reptile)</label>
+				</div>
+				<div class="custom-control custom-checkbox">
+					<input id="check3" name="interestField01" type="checkbox"
+						class="custom-control-input" value="조류"> <label
+						class="custom-control-label" for="check3"><img width="22"
+						height="22" alt="" src="/img/bird.png"> 조류 (bird)</label>
+				</div>
+				<div class="custom-control custom-checkbox">
+					<input id="check4" name="interestField01" type="checkbox"
+						class="custom-control-input" value="어류"> <label
+						class="custom-control-label" for="check4"><img width="22"
+						height="22" alt="" src="/img/fish.png"> 어류 (fish)</label>
+				</div>
+				<div class="custom-control custom-checkbox">
+					<input id="check5" name="interestField01" type="checkbox"
+						class="custom-control-input" value="양서류"> <label
+						class="custom-control-label" for="check5"><img width="22"
+						height="22" alt="" src="/img/amphibian.png"> 양서류(amphibian)</label>
+				</div>
+				<div class="custom-control custom-checkbox">
+					<input id="check6" name="interestField01" type="checkbox"
+						class="custom-control-input" value="무척추동물"> <label
+						class="custom-control-label" for="check6"><img width="22"
+						height="22" alt="" src="/img/invertebrate.png"> 무척추동물
+						(invertebrate)</label>
+				</div>
+				<div class="custom-control custom-checkbox">
+					<input id="check7" name="interestField01" type="checkbox"
+						class="custom-control-input" value="거미/곤충류"> <label
+						class="custom-control-label" for="check7"><img width="22"
+						height="22" alt="" src="/img/spider.png"> 거미/곤충류 (spider)</label>
+				</div>
+			</fieldset>
+			<hr class="mb-4">
+
+		</div>
+
+
+		<div class="col-md-6">
+			<fieldset>
+				<legend> 관심있는 분야 </legend>
+				<div class="custom-control custom-checkbox">
+					<input id="check8" name="interestField02" type="checkbox"
+						class="custom-control-input" value="음식" checked=""> <label
+						class="custom-control-label" for="check8"><img width="22"
+						height="22" alt="" src="/img/food.png"> 음식 (food)</label>
+				</div>
+				<div class="custom-control custom-checkbox">
+					<input id="check9" name="interestField02" type="checkbox"
+						class="custom-control-input" value="질병"> <label
+						class="custom-control-label" for="check9"><img width="22"
+						height="22" alt="" src="/img/disease.png"> 질병 (disease)</label>
+				</div>
+				<div class="custom-control custom-checkbox">
+					<input id="check10" name="interestField02" type="checkbox"
+						class="custom-control-input" value="행동"> <label
+						class="custom-control-label" for="check10"><img width="22"
+						height="22" alt="" src="/img/sleep.png"> 행동 (action)</label>
+				</div>
+			</fieldset>
+		</div>
+
+
+
+		<hr class="mb-4">
+
+		<button class="btn btn-lg btn-primary btn-block" type="submit">전문가 찾기</button>
+		<a class="btn btn-danger btn-lg btn-original"
+			href="/search/matchingList" role="button">기존 선호사항으로 매칭</a>
+		<p class="mt-5 mb-3 text-muted text-center">&copy; 2018</p>
+	</form>
+	{{/user}}
+	{{> include/footer}}
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+{{> include/header}}
+<style>
+.form-signin {
+	width: 100%;
+	max-width: 420px;
+	padding: 15px;
+	margin: auto;
+}
+
+.form-label-group {
+	position: relative;
+	margin-bottom: 1rem;
+}
+
+.container {
+	margin-top: 30px;
+	padding-top: 30px;
+}
+body {
+  background-color: #f5f5f5;
+}
+</style>
+</head>
+<body>
+	<form class="form-signin" action="/users/login" method="post">
+		<div class="text-center container mb-4">
+			<img class="mb-4" src="" alt="" width="72" height="72">
+			<p><img width="55" height="55" alt="" src="/img/user.png"></p>
+			<h1 class="h3 mb-3 font-weight-normal">Rare Animal Login</h1>
+			<p>
+				Build form controls with floating labels via the
+				<code>:placeholder-shown</code>
+				pseudo-element. <br>
+				<a href="/experts/loginForm">전문가 로그인</a>
+			</p>
+		</div>
+
+		<div class="form-label-group">
+			<input type="text" class="form-control" name="userId"
+				placeholder="User ID" autofocus>
+		</div>
+
+		<div class="form-label-group">
+			<input type="password" class="form-control" name="userPassword"
+				placeholder="Password">
+		</div>
+
+		<button class="btn btn-lg btn-secondary btn-block" type="submit">Sign
+			in</button>
+		<p class="mt-5 mb-3 text-muted text-center">&copy; 2018</p>
+	</form>
+	
+	{{> include/footer}}
+</body>
+</html>

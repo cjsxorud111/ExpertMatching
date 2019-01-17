@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+{{> include/header}}
+<style>
+.form-signin {
+	width: 100%;
+	max-width: 420px;
+	padding: 15px;
+	margin: auto;
+}
+
+.form-label-group {
+	position: relative;
+	margin-bottom: 1rem;
+}
+
+.container {
+	margin-top: 30px;
+	padding-top: 30px;
+}
+body {
+  background-color: #f5f5f5;
+}
+</style>
+</head>
+<body>
+	{{> include/navigation}}
+	<form class="form-signin" action="/questions" method="post">
+		<div class="text-center container mb-4">
+			<img class="mb-4" src="" alt="" width="72" height="72">
+			<h1 class="h3 mb-3 font-weight-normal">Rare Animal Question</h1>
+			<p>
+				Build form controls with floating labels via the
+				<code>:placeholder-shown</code>
+				pseudo-element. <a href="">Works in latest Chrome, Safari, and
+					Firefox.</a>
+			</p>
+		</div>
+
+		
+		<div class="form-label-group">
+			<label for="title">제목</label> <input type="text" class="form-control"
+				id="title" name="title" placeholder="제목" autofocus>
+		</div>
+
+		<div class="form-label-group">
+			<label for="contents">내용</label>
+			<textarea class="form-control" rows="5" id="contents" name="contents"></textarea>
+		</div>
+
+		<button class="btn btn-lg btn-primary btn-block" type="submit">질문하기</button>
+		<p class="mt-5 mb-3 text-muted text-center">&copy; 2018</p>
+	</form>
+
+	{{> include/footer}}
+</body>
+</html>

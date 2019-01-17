@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+{{> include/header}}
+<link rel="stylesheet" type="text/css" href="/css/checkbox.css">
+<style>
+.form-signin {
+	width: 100%;
+	max-width: 420px;
+	padding: 15px;
+	margin: auto;
+}
+
+.form-label-group {
+	position: relative;
+	margin-bottom: 1rem;
+}
+
+.container {
+	margin-top: 30px;
+	padding-top: 30px;
+}
+
+body {
+	background-color: #f5f5f5;
+}
+
+#naverMap {
+	border: 1px solid #000;
+	width: 90%;
+	height: 350px;
+	margin: 5%
+}
+
+.xyform {
+	margin-left: 38px;
+}
+
+#xy {
+	width: 35%;
+}
+</style>
+<script type="text/javascript"
+	src="https://openapi.map.naver.com/openapi/v3/maps.js?clientId=EyS1oN3ctKp11P_s__ni"></script>
+</head>
+<body>
+	<form class="form-signin" action="/experts/join" method="post">
+		<div class="text-center container mb-4">
+			<img class="mb-4" src="" alt="" width="72" height="72">
+			<p><img width="55" height="55" alt="" src="/img/expert2.png"></p>
+			<h1 class="h3 mb-3 font-weight-normal">Rare Animal 회원가입</h1>
+			<p>
+				Build form controls with floating labels via the
+				<code>:placeholder-shown</code>
+				pseudo-element.</br> <a href="/users/joinForm">사용자 회원가입</a>
+			</p>
+		</div>
+
+
+
+		<div class="form-label-group">
+			<input type="text" class="form-control" name="expertId"
+				placeholder="Expert ID" required autofocus>
+		</div>
+
+		<div class="form-label-group">
+			<input type="password" class="form-control" name="expertPassword"
+				placeholder="Password" required>
+		</div>
+
+		<div class="form-label-group">
+			<input type="text" class="form-control" name="expertName"
+				placeholder="Name" required>
+		</div>
+
+		<div class="form-label-group">
+			<input type="text" class="form-control" name="expertEmail"
+				placeholder="Email" required>
+		</div>
+
+
+
+
+		<hr class="mb-4">
+		<div class="row">
+			<div class="col-md-6">
+				<fieldset>
+					<legend> 관심있는 동물 </legend>
+					<div class="custom-control custom-checkbox">
+						<input id="check15" name="expertiseField01" type="checkbox"
+							class="custom-control-input" value="포유류" checked="checked">
+						<label class="custom-control-label" for="check15"><img width="22" height="22" alt="" src="/img/mammal.png"> 포유류 (mammal)</label>
+					</div>
+					<div class="custom-control custom-checkbox">
+						<input id="check16" name="expertiseField01" type="checkbox"
+							class="custom-control-input" value="파충류"> <label
+							class="custom-control-label" for="check16"><img width="22" height="22" alt="" src="/img/reptile.png"> 파충류 (reptile)</label>
+					</div>
+					<div class="custom-control custom-checkbox">
+						<input id="check17" name="expertiseField01" type="checkbox"
+							class="custom-control-input" value="조류"> <label
+							class="custom-control-label" for="check17"><img width="22" height="22" alt="" src="/img/bird.png"> 조류 (bird)</label>
+					</div>
+					<div class="custom-control custom-checkbox">
+						<input id="check18" name="expertiseField01" type="checkbox"
+							class="custom-control-input" value="어류"> <label
+							class="custom-control-label" for="check18"><img width="22" height="22" alt="" src="/img/fish.png"> 어류 (fish)</label>
+					</div>
+					<div class="custom-control custom-checkbox">
+						<input id="check19" name="expertiseField01" type="checkbox"
+							class="custom-control-input" value="양서류"> <label
+							class="custom-control-label" for="check19"><img width="22" height="22" alt="" src="/img/amphibian.png"> 양서류(amphibian)</label>
+					</div>
+					<div class="custom-control custom-checkbox">
+						<input id="check20" name="expertiseField01" type="checkbox"
+							class="custom-control-input" value="무척추동물"> <label
+							class="custom-control-label" for="check20"><img width="22" height="22" alt="" src="/img/invertebrate.png"> 무척추동물 (invertebrate)</label>
+					</div>
+					<div class="custom-control custom-checkbox">
+						<input id="check21" name="expertiseField01" type="checkbox"
+							class="custom-control-input" value="거미/곤충류"> <label
+							class="custom-control-label" for="check21"><img width="22" height="22" alt="" src="/img/spider.png"> 거미/곤충류 (spider)</label>
+					</div>
+					<hr class="mb-4">
+
+				</fieldset>
+
+			</div>
+
+
+			<div class="col-md-6">
+				<fieldset>
+					<legend> 관심있는 분야 </legend>
+					<div class="custom-control custom-checkbox">
+						<input id="check22" name="expertiseField02" type="checkbox"
+							class="custom-control-input" value="음식" checked=""> <label
+							class="custom-control-label" for="check22"><img width="22" height="22" alt="" src="/img/food.png"> 음식 (food)</label>
+					</div>
+					<div class="custom-control custom-checkbox">
+						<input id="check23" name="expertiseField02" type="checkbox"
+							class="custom-control-input" value="질병"> <label
+							class="custom-control-label" for="check23"><img width="22" height="22" alt="" src="/img/disease.png"> 질병 (disease)</label>
+					</div>
+					<div class="custom-control custom-checkbox">
+						<input id="check24" name="expertiseField02" type="checkbox"
+							class="custom-control-input" value="행동"> <label
+							class="custom-control-label" for="check24"><img width="22" height="22" alt="" src="/img/sleep.png"> 행동 (action)</label>
+					</div>
+				</fieldset>
+			</div>
+		</div>
+
+
+		<hr class="mb-4">
+
+		<h5>경력년수</h5>
+		<select class="form-control" name="expertCareer">
+			<option value="1">1년</option>
+			<option value="2">2년</option>
+			<option value="3">3년</option>
+			<option value="4">4년</option>
+			<option value="5">5년</option>
+			<option value="6">6년</option>
+			<option value="7">7년</option>
+			<option value="8">8년</option>
+			<option value="9">9년</option>
+			<option value="10++">10년이상</option>
+		</select>
+
+		<hr class="mb-4">
+		<h5>자격분야</h5>
+		<div class="custom-control custom-checkbox">
+			<input id="check11" name="license" type="checkbox"
+				class="custom-control-input" value="의료" checked=""> <label
+				class="custom-control-label" for="check11"><img width="22" height="22" alt="" src="/img/treatment.png"> 의료 (treatment)</label>
+		</div>
+		<div class="custom-control custom-checkbox">
+			<input id="check12" name="license" type="checkbox"
+				class="custom-control-input" value="양육"> <label
+				class="custom-control-label" for="check12"><img width="22" height="22" alt="" src="/img/nurture.png"> 양육 (nurture)</label>
+		</div>
+		<div class="custom-control custom-checkbox">
+			<input id="check13" name="license" type="checkbox"
+				class="custom-control-input" value="사냥"> <label
+				class="custom-control-label" for="check13"><img width="22" height="22" alt="" src="/img/hunting.png"> 사냥 (hunting)</label>
+		</div>
+		<div class="custom-control custom-checkbox">
+			<input id="check14" name="license" type="checkbox"
+				class="custom-control-input" value="연구"> <label
+				class="custom-control-label" for="check14"><img width="22" height="22" alt="" src="/img/search.png"> 연구 (study)</label>
+		</div>
+
+		<hr class="mb-4">
+
+		<h5>자격증</h5>
+		<div class="form-label-group">
+			<input type="text" class="form-control" name="licenseType"
+				placeholder="License Type">
+		</div>
+
+		<hr class="mb-4">
+
+		<div id="naverMap"></div>
+		<div class="row xyform xy1" style="margin-top: 10px;">
+			<div class="row xyform">
+				<input type="text" class="form-control" id="xy" name="posX">
+				<input type="text" class="form-control" id="xy" name="posY">
+			</div>
+		</div>
+		<hr class="mb-4">
+		<button class="btn btn-lg btn-secondary btn-block" type="submit">회원가입</button>
+		<p class="mt-5 mb-3 text-muted text-center">&copy; 2018</p>
+	</form>
+	<script>
+		var map = new naver.maps.Map('naverMap', {
+			center : new naver.maps.LatLng(37.499934, 127.036415),
+			zoom : 11,
+			zoomControl : true,
+			zoomControlOptions : {
+				position : naver.maps.Position.TOP_RIGHT
+			},
+			mapTypeControl : true,
+		});
+		function setMarker(posX, posY) {
+			var marker = new naver.maps.Marker({
+				position : new naver.maps.LatLng(posX, posY),
+				map : map
+			});
+			markerArray.push(marker);
+		}
+		var markerArray = [];
+		function deleteMarkers() {
+			for (key in markerArray) {
+				markerArray[key].setMap(null);
+			}
+			markerArray = [];
+		}
+		naver.maps.Event.addListener(map, 'click', function(e) {
+			$('[name=posX]').val(e.coord.lat());
+			$('[name=posY]').val(e.coord.lng());
+			deleteMarkers();
+			setMarker(e.coord.lat(), e.coord.lng());
+		});
+	</script>
+
+	{{> include/footer}}
+</body>
+</html>

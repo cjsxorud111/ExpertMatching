@@ -1,0 +1,64 @@
+{{#sessionedUser}}
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+	{{/sessionedUser}} {{#sessionedExpert}}
+	<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+		{{/sessionedExpert}} <a class="navbar-brand" href="/index" method="get"><img width="22" height="25" alt="" src="/img/expert3.png"> 희귀동물 전문가 매핑 서비스</a>
+		<button class="navbar-toggler" type="button" data-toggle="collapse"
+			data-target="#navbarSupportedContent"
+			aria-controls="navbarSupportedContent" aria-expanded="false"
+			aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+
+		<div class="collapse navbar-collapse" id="navbarSupportedContent">
+			<ul class="navbar-nav mr-auto">
+				<li class="nav-item active"><a class="nav-link" href="/index"><img width="25" height="25" alt=""
+						src="/img/home.png">Home
+						<span class="sr-only">(current)</span>
+				</a></li>
+				</li> {{#sessionedUser}}
+
+				<li class="nav-item active"><a class="nav-link"
+					href="/search/{{userNum}}/interestGuide"><img width="22" height="22" alt="" src="/img/connect.png"> 매칭하기</a></li>
+				<li class="nav-item active"><a class="nav-link"
+					href="/users/{{userNum}}/chatList"><img width="22" height="22" alt="" src="/img/chat.png"> 채팅 리스트</a></li>
+				<li class="nav-item dropdown"><a
+					class="nav-link dropdown-toggle" href="#" id="navbarDropdown"
+					role="button" data-toggle="dropdown" aria-haspopup="true"
+					aria-expanded="false"> <img width="22" height="22" alt=""
+						src="/img/person1.png">
+				</a>
+					<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+						<!-- 
+						<a class="dropdown-item" href="/users/memberList">회원리스트</a> 
+						 -->
+						<a class="dropdown-item" href="/users/{{userNum}}/updateForm">회원정보수정</a>
+						<a class="dropdown-item" href="/questions/form">질문하기</a>
+						<div class="dropdown-divider"></div>
+						<a class="dropdown-item" href="/users/logout">로그아웃</a>
+					</div></li> {{/sessionedUser}} {{#sessionedExpert}}
+				<li class="nav-item active"><a class="nav-link"
+					href="/search/{{expertNum}}/expertInfo"><img width="22" height="22" alt="" src="/img/info.png"> 마이 페이지</a></li>
+				<li class="nav-item active"><a class="nav-link"
+					href="/experts/{{expertNum}}/chatList"><img width="22" height="22" alt="" src="/img/chat.png"> 채팅 리스트</a></li>
+				<li class="nav-item dropdown">
+				<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown"
+					role="button" data-toggle="dropdown" aria-haspopup="true"
+					aria-expanded="false"><img width="22" height="22" alt=""
+						src="/img/person1.png"> </a>
+					<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+						<a class="dropdown-item" href="/experts/{{expertNum}}/updateForm">회원정보수정</a>
+						<div class="dropdown-divider"></div>
+						<a class="dropdown-item" href="/experts/logout">로그아웃</a>
+					</div></li> {{/sessionedExpert}}
+
+
+			</ul>
+			<form class="form-inline my-2 my-lg-0" action="/chat/searchChat"
+				method="get">
+				<input class="form-control mr-sm-2" type="search" name="searchWord"
+					placeholder="채팅검색" aria-label="Search">
+				<button class="btn btn-outline-light my-2 my-sm-0" type="submit">Search</button>
+			</form>
+		</div>
+	</nav>

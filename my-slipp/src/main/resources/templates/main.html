@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+{{> include/header}}
+<style>
+.container {
+	margin-top: 30px;
+	padding-top: 30px;
+}
+
+#img-fluid {
+	max-width: 100%;
+}
+
+.dog {
+	margin-top: 50px;
+}
+
+#title {
+	margin-top: 15px;
+}
+</style>
+
+</head>
+<body>
+	<div class="my-3 p-3 bg-white rounded">
+		<div class="row">
+			<div class="col-md-6 order-md-2">
+				<img id="img-fluid" class="dog" alt="" src="img/main.jpg">
+			</div>
+			<div class="col-md-6 order-md-3 text-center text-md-left pr-md-5">
+				<h1 id="title" class="mb-3 bd-text-purple-bright">Rare Animal</h1>
+				<h5>(희귀동물 전문가 매핑 프로젝트)</h5>
+				<p class="lead">Build responsive, mobile-first projects on the
+					web with the world's most popular front-end component library.</p>
+				<p class="lead mb-4">As the demand for special pets increases
+					exponentially in the future, the number of users who need expertise
+					will soar. Therefore, through 1:1 mapping with experts equipped
+					with professional knowledge, it is easier and simpler to acquire
+					expertise.</p>
+				<div class="d-flex flex-column flex-md-row lead mb-3">
+					<a href="/users/joinForm"
+						class="btn btn-lg btn-outline-secondary mb-3 mb-md-0 mr-md-3">회원가입</a>
+					<a href="/users/loginForm" class="btn btn-lg btn-outline-secondary">로그인</a>
+				</div>
+				<p class="text-muted mb-0">version 1.0</p>
+
+			</div>
+		</div>
+	</div>
+	{{> include/footer}}
+</body>
+</html>
